@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<form>
+			<fieldset>
+				<legend>Get Form</legend>
+				<fieldset>
+				<legend>Search by city</legend>
+				<label for="city">City name:</label>
+				<input type="text" name="city" id="city">
+				<label for="code1">Country Code:</label>
+				<input type="text" name="code1" id="code1">
+			</fieldset>
+			<fieldset>
+				<legend>Search by zip code</legend>
+				<label for="zip">Zip code:</label>
+				<input type="text" name="zip" id="zip">
+				<label for="code2">Country code:</label>
+				<input type="text" name="code2" id="code2">
+				</fieldset>
+				<br>
+				<input type="submit" id="submit">
+			</fieldset>
+		</form>
+		<div>
+			<h3>Output:</h3>
+			<label for="country">Country:</label>
+			<data name="country" id="country"></data>
+			<br>
+			<label for="place">Place name:</label>
+			<data id="place"></data>
+			<br>
+			<label for="humidity">Humidity:</label>
+			<data id="humidity"></data>
+			<br>
+			<label for="visibility">Visibility:</label>
+			<data id="visibility"></data>
+			<br>
+			<label for="wind">Wind Speed:</label>
+			<data id="wind"></data>
+			<br>
+			<label for="description">Description:</label>
+			<data id="description"></data>
+		</div>
+		<br>
+		<form>
+			<fieldset>
+				<legend>Post Form</legend>
+				<label for="name">Name:</label>
+				<input type="text" name="name" id="name">
+				<br>
+				<br>
+				<label for="gender">Gender:</label>
+				<input type="text" name="gender" id="gender">
+				<br>
+				<br>
+				<label for="name">Age:</label>
+				<input type="text" name="age" id="age">
+				<br>
+				<br>
+				<input type="submit" id="submitPost">
+			</fieldset>
+		</form>
+		<div>
+			<h3>Output:</h3>
+			<label for="output1">Name:</label>
+			<data id="output1"></data>
+			<br>
+			<label for="output2">Gender:</label>
+			<data id="output2"></data>
+			<br>
+			<label for="output3">Age:</label>
+			<data id="output3"></data>
+		</div>
+		<script src="func.js"></script>
+	</body>
+</html>
