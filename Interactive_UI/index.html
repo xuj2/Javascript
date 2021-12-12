@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <meta charset = "UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Database</title>
+    </head>
+    <body>
+        <h2>Add a workout</h2>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="number" id="reps" name="reps" placeholder="Reps">
+            <input type="number" id="weight" name="weight" placeholder="Weight">
+            <input type="radio" name="unit" id="lbs" value="lbs">
+            <label name="lbs">lbs</label>
+            <input type="radio" name="unit" id="kgs" value="kgs">
+            <label type="kgs">kgs</label>
+            <input type="date" name="date" id="date" value="MM-dd-yyyy">
+            <input type="submit" id="submit" value="Submit">
+        </form>
+        <h2>Workout list</h2>
+        <table>
+            <tr>
+                <td></td>
+                <td>Name</td>
+                <td>Reps</td>
+                <td>Weight</td>
+                <td>Units</td>
+                <td>Date</td>
+            </tr>
+        </table>
+        <input type="button" id="reset" value="Reset Table">
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<h1>POST Request Received</h1>
+{{#if q.length}}
+<table>
+    <tr>
+        <td>Parameter</td>
+        <td>Value</td>
+    </tr>
+    {{#each q}}
+        <tr>
+        <td>{{this.name}}
+        <td>{{this.value}}
+        </tr>
+    {{/each}}
+</table>
+{{/if}}
+{{#if body.length}}
+<table>
+    <tr>
+        <td>Parameter(Body)</td>
+        <td>Value(Body)</td>
+    </tr>
+    {{#each body}}
+        <tr>
+        <td>{{this.name}}
+        <td>{{this.value}}
+        </tr>
+    {{/each}}
+</table>
+{{/if}}

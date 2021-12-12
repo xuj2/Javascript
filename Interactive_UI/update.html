@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>        
+        <meta charset = "UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Database</title>
+    </head>
+    <body>
+        <h2>Update</h2>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="number" id="reps" name="reps" placeholder="Reps">
+            <input type="number" id="weight" name="weight" placeholder="Weight">
+            <input type="radio" name="unit" id="lbs" value="lbs">
+            <label name="lbs">lbs</label>
+            <input type="radio" name="unit" id="kgs" value="kgs">
+            <label type="kgs">kgs</label>
+            <input type="date" name="date" id="date" value="MM-dd-yyyy">
+            <input type="button" id="save" value="Save">
+        </form>
+        <script>
+            url = "http://flip3.engr.oregonstate.edu:7495/"
+            document.getElementById("name").value = localStorage.getItem("name");
+            document.getElementById("reps").value = localStorage.getItem("reps");
+            document.getElementById("weight").value = localStorage.getItem("weight");
+            document.getElementById("date").value = localStorage.getItem("date");
+            var radio = document.getElementsByName("unit");
+            var unit = localStorage.getItem("unit");
+            if (unit == "lbs") {
+                radio[0].checked = true;
+            } else {
+                radio[1].checked = true;
+            }
+            document.getElementById("save").addEventListener("click", function () {
+                var req = new XMLHttpRequest();
+                var id = localStorage.getItem("id");
+                var name = document.getElementById("name").value;
+                var reps = document.getElementById("reps").value;
+                var weight = document.getElementById("weight").value;
+                var date = document.getElementById("date").value;
+                var radio = document.getElementsByName("unit");
+                var unit;
+                if (radio[0].checked) {
+                    unit = 0;
+                } else {
+                    unit = 1;
+                }
+                var request = JSON.stringify({"name": name, "reps": reps, "weight": weight, "unit": unit, "date": date, "id": id});
+                req.open("PUT", url, true);
+                req.setRequestHeader('Content-Type', 'application/json');
+                req.addEventListener("load", function () {
+                if (req.status >= 200 && req.status < 400) {
+                        window.location.href = "http://web.engr.oregonstate.edu/~xuj2/";
+                    };
+                });
+                req.send(request);
+                });
+        </script>
+    </body>
+</html>
